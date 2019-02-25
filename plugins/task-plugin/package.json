@@ -1,0 +1,57 @@
+{
+  "name": "che-theia-task-plugin",
+  "publisher": "theia",
+  "keywords": [
+    "theia-plugin"
+  ],
+  "version": "0.0.1",
+  "license": "none",
+  "files": [
+    "src",
+    "resources"
+  ],
+  "dependencies": {
+    "@eclipse-che/plugin": "latest",
+    "@theia/core": "latest",
+    "vscode-ws-jsonrpc": "^0.0.2-1"
+  },
+  "devDependencies": {
+    "@theia/plugin": "latest",
+    "@theia/plugin-packager": "latest",
+    "clean-webpack-plugin": "^0.1.19",
+    "rimraf": "2.6.2",
+    "ts-loader": "^4.1.0",
+    "typescript": "2.9.2",
+    "typescript-formatter": "7.2.2",
+    "webpack": "^4.1.1",
+    "webpack-cli": "^3.1.1"
+  },
+  "contributes": {
+    "configuration": {
+        "type": "object",
+        "title": "Che task preview configuration",
+        "properties": {
+            "che.task.preview.notifications": {
+                "type": "string",
+                "default": "on",
+                "enum": ["on", "alwaysPreview", "alwaysGoTo", "off"],
+                "description": "Enable/disable the notifications with a proposal to open a Che task's preview URL. Can be: 'on', 'alwaysPreview', 'alwaysGoTo' or 'off'."
+            }
+        }
+    }
+},
+  "scripts": {
+    "prepare": "yarn run clean && yarn run build",
+    "clean": "rimraf lib",
+    "format-code": "tsfmt -r",
+    "watch": "webpack-cli -w --config webpack.config.js",
+    "compile": "webpack-cli --config webpack.config.js",
+    "build": "yarn run format-code && yarn run compile && theia:plugin pack"
+  },
+  "engines": {
+    "theiaPlugin": "next"
+  },
+  "theiaPlugin": {
+    "frontend": "dist/che-theia-task-plugin-frontend.js"
+  }
+}
