@@ -1,0 +1,37 @@
+{
+      "name": "tasks-plugin",
+      "publisher": "theia",
+      "keywords": [
+        "theia-plugin"
+      ],
+      "version": "0.0.1",
+      "license": "none",
+      
+      "files": [
+        "src"
+      ],
+      "devDependencies": {
+        "@eclipse-che/plugin": "0.0.1",
+        "@theia/plugin": "0.4.0-next.6bd4786c",
+        "@theia/plugin-packager": "latest"
+      },
+      "scripts": {
+        "prepare": "yarn run clean && yarn run build",
+        "clean": "rimraf lib",
+        "format": "tsfmt -r --useTsfmt ../../configs/tsfmt.json",
+        "watch": "webpack-cli -w --config webpack.config.js",
+        "compile": "webpack-cli --config webpack.config.js",
+        "lint": "tslint -c ../../configs/tslint.json --project tsconfig.json",
+        "lint:fix": "tslint -c ../../configs/tslint.json --fix --project .",
+        "build": "concurrently -n \"format,lint,compile\" -c \"red,green,blue\" \"yarn format\" \"yarn lint\" \"yarn compile\" && theia:plugin pack"
+      },
+      "engines": {
+        "theiaPlugin": "next"
+      },
+      "theiaPlugin": {
+          
+            "frontend": "dist/tasks-plugin-frontend.js"
+          
+          
+      }
+}
