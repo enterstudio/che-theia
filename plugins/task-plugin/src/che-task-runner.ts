@@ -42,20 +42,18 @@ export class CheTaskRunner {
 
         const target = definition.target;
         if (!target) {
-            throw new Error(`Che task config must have 'target' property specified`);
+            throw new Error('Che task config must have "target" property specified');
         }
 
         const workspaceId = target.workspaceId;
         if (!workspaceId) {
-            throw new Error(`Che task config must have 'target.workspaceId' property specified`);
+            throw new Error('Che task config must have "target.workspaceId" property specified');
         }
 
         const machineName = target.machineName;
         if (!machineName) {
-            throw new Error(`Che task config must have 'target.machineName' property specified`);
+            throw new Error('Che task config must have "target.machineName" property specified');
         }
-
-        console.log('=========================== command777 ' + JSON.stringify(taskConfig));
 
         const machineExec: MachineExec = {
             identifier: {
@@ -74,18 +72,17 @@ export class CheTaskRunner {
                 // console.log('///777 promise "connectTerminalProcess" is resolved');
             });
 
-            return new Promise<che.Task>((resolve) => {
+            return new Promise<che.Task>(resolve => {
                 const result: che.Task = {
                     kill: () => {
                         throw new Error('Stopping a Che task currently is not supported.');
                     },
-                    getRuntimeInfo: () => {
-                        return {
+                    getRuntimeInfo: () =>
+                        ({
                             taskId: STUB_TASK_ID,
                             ctx: ctx,
                             config: taskConfig
-                        }
-                    }
+                        })
                 };
 
                 resolve(result);

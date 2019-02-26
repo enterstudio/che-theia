@@ -47,13 +47,14 @@ export class PreviewUrlsWidget {
                 <html lang="en">
                 <head>
                     <meta charset="UTF-8">
-                    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; font-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; script-src 'unsafe-inline' 'self' ;">
+                    <meta http-equiv="Content-Security-Policy"
+                    content="default-src 'none'; font-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self'; script-src 'unsafe-inline' 'self' ;">
                     <meta name="viewport" content="width=device-width, initial-scale=1.0">
                     <link rel="stylesheet" type="text/css" href="${cssUri}">
                     </style>
                     <title>${PREVIEW_URL_TITLE}</title>
                 </head>
-    
+
                 <body>
                   ${rendering}
                   <script src="${scriptUri}"></script>
@@ -71,7 +72,7 @@ export class PreviewUrlsWidget {
     }
 
     private renderPreviews(): Array<string> {
-        return this.options.tasks.map((cheTask) => {
+        return this.options.tasks.map(cheTask => {
             const previewUrl = cheTask.definition.previewUrl;
 
             const server = `<lable>${previewUrl}</label>`;

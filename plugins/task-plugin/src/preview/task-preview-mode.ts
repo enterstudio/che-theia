@@ -12,7 +12,7 @@ import { injectable } from 'inversify';
 import * as theia from '@theia/plugin';
 
 const CHE_CONFIGURATION = 'che';
-const TASK_PREVIEW_NOTIFICATIONS = 'task.preview.notifications'
+const TASK_PREVIEW_NOTIFICATIONS = 'task.preview.notifications';
 
 export enum PreviewMode {
     On = 'on',
@@ -27,7 +27,7 @@ export class CheTaskPreviewMode {
     get(): PreviewMode {
         const configuration = theia.workspace.getConfiguration(CHE_CONFIGURATION);
         if (!configuration) {
-            return PreviewMode.On
+            return PreviewMode.On;
         }
 
         const preference = configuration.get(TASK_PREVIEW_NOTIFICATIONS);

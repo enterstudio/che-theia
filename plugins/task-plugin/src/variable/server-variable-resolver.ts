@@ -50,6 +50,6 @@ export class ServerVariableResolver {
             description: url,
             resolve: async () => url,
             isResolved: true
-        }
+        };
     }
 }

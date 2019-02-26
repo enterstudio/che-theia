@@ -10,7 +10,7 @@
 
 import { injectable, inject } from 'inversify';
 import * as che from '@eclipse-che/plugin';
-import { che as cheApi } from '@eclipse-che/api'
+import { che as cheApi } from '@eclipse-che/api';
 import { Task, ShellExecution } from '@theia/plugin';
 import { CHE_TASK_TYPE, MACHINE_NAME_ATTRIBUTE, PREVIEW_URL_ATTRIBUTE, CheTaskDefinition, Target } from './task-protocol';
 import { MachinesPicker } from './machine/machines-picker';

@@ -8,9 +8,9 @@
  * SPDX-License-Identifier: EPL-2.0
  **********************************************************************/
 
-import { injectable, inject } from "inversify";
+import { injectable, inject } from 'inversify';
 import * as theia from '@theia/plugin';
-import { AttachTerminalClient } from "./attach-client";
+import { AttachTerminalClient } from './attach-client';
 
 export const TerminalWidgetFactory = Symbol('TerminalWidgetFactory');
 export interface TerminalWidgetFactory {

@@ -14,7 +14,7 @@
 
 import * as theia from '@theia/plugin';
 import * as che from '@eclipse-che/plugin';
-import "reflect-metadata";
+import 'reflect-metadata';
 import { CHE_TASK_TYPE } from './task-protocol';
 import { CheTaskProvider } from './che-task-provider';
 import { container } from './che-task-frontend-module';

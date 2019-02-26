@@ -54,6 +54,7 @@ export class TasksPreviewManager {
         panel.onDidDispose(() => { this.currentPanel = undefined; }, undefined, context.subscriptions);
     }
 
+    // tslint:disable-next-line:no-any
     private onMessageReceived(message: any) {
         if (message.command !== 'preview') {
             return;
@@ -72,7 +73,7 @@ export class TasksPreviewManager {
 
     private providePanel(): theia.WebviewPanel {
         if (this.currentPanel) {
-            //TODO improve way of updating webview panel
+            // TODO improve way of updating webview panel
             // depends on https://github.com/theia-ide/theia/issues/4342 and https://github.com/theia-ide/theia/issues/4339
             this.currentPanel.dispose();
         }

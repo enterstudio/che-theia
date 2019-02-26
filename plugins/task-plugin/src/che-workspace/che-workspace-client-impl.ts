@@ -9,7 +9,7 @@
  **********************************************************************/
 
 import * as che from '@eclipse-che/plugin';
-import { che as cheApi } from '@eclipse-che/api'
+import { che as cheApi } from '@eclipse-che/api';
 import { CheWorkspaceClient } from './che-workspace-client';
 import { injectable } from 'inversify';
 

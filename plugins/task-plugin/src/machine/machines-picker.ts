@@ -54,7 +54,7 @@ export class MachinesPicker {
     }
 
     private showMachineQuickPick(items: string[]): Promise<string> {
-        return new Promise<string>((resolve) => {
+        return new Promise<string>(resolve => {
 
             const options = { placeHolder: MACHINES_PLACE_HOLDER } as theia.QuickPickOptions;
             options.onDidSelectItem = (item => {

@@ -25,7 +25,7 @@ export class ProjectPathVariableResolver {
                 // TODO https://github.com/theia-ide/theia/issues/4043
                 throw new Error('Project path variable resolving currently is not supported.');
             },
-            isResolved: false //todo implement
+            isResolved: false // todo implement
         });
     }
 }

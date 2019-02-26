@@ -41,6 +41,7 @@ export class AttachTerminalClient {
         const webSocket = await new ReconnectingWebSocket(terminalURL, [], RECONNECTING_OPTIONS);
         // console.log('=== websocket is created ');
 
+        // tslint:disable-next-line:no-any
         webSocket.addEventListener('message', (message: any) => {
             outputHandler.onMessage(message.data);
         });
@@ -49,6 +50,6 @@ export class AttachTerminalClient {
             console.error('Websocket error:', event);
         });
         // console.log('=== after ATTACH client after added listeners');
-        // TODO close webSocket when task is completed; event with runtime info is not implemented for plugin API at the moment     
+        // TODO close webSocket when task is completed; event with runtime info is not implemented for plugin API at the moment
     }
 }

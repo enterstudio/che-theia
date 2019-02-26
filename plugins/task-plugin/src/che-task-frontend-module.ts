@@ -8,23 +8,23 @@
  * SPDX-License-Identifier: EPL-2.0
  **********************************************************************/
 
-import "reflect-metadata";
+import 'reflect-metadata';
 import { Container } from 'inversify';
-import { CheTaskProvider } from "./che-task-provider";
-import { MachinesPicker } from "./machine/machines-picker";
-import { ProjectPathVariableResolver } from "./variable/project-path-variable-resolver";
-import { CheTaskRunner } from "./che-task-runner";
-import { ServerVariableResolver } from "./variable/server-variable-resolver";
-import { CheWorkspaceClient } from "./che-workspace/che-workspace-client";
-import { CheWorkspaceClientImpl } from "./che-workspace/che-workspace-client-impl";
-import { MachineExecClient } from "./machine/machine-exec-client";
-import { CheTerminalWidget, CheTerminalWidgetOptions, TerminalWidgetFactory } from "./machine/terminal-widget";
-import { CheTaskEventsHandler } from "./preview/task-events-handler";
-import { TasksPreviewManager } from "./preview/tasks-preview-manager";
-import { AttachTerminalClient } from "./machine/attach-client";
-import { PreviewUrlsWidgetFactory, PreviewUrlsWidget, PreviewUrlsWidgetOptions } from "./preview/previews-widget";
-import { CheTaskPreviewMode } from "./preview/task-preview-mode";
-import { PreviewUrlOpenService } from "./preview/preview-url-open-service";
+import { CheTaskProvider } from './che-task-provider';
+import { MachinesPicker } from './machine/machines-picker';
+import { ProjectPathVariableResolver } from './variable/project-path-variable-resolver';
+import { CheTaskRunner } from './che-task-runner';
+import { ServerVariableResolver } from './variable/server-variable-resolver';
+import { CheWorkspaceClient } from './che-workspace/che-workspace-client';
+import { CheWorkspaceClientImpl } from './che-workspace/che-workspace-client-impl';
+import { MachineExecClient } from './machine/machine-exec-client';
+import { CheTerminalWidget, CheTerminalWidgetOptions, TerminalWidgetFactory } from './machine/terminal-widget';
+import { CheTaskEventsHandler } from './preview/task-events-handler';
+import { TasksPreviewManager } from './preview/tasks-preview-manager';
+import { AttachTerminalClient } from './machine/attach-client';
+import { PreviewUrlsWidgetFactory, PreviewUrlsWidget, PreviewUrlsWidgetOptions } from './preview/previews-widget';
+import { CheTaskPreviewMode } from './preview/task-preview-mode';
+import { PreviewUrlOpenService } from './preview/preview-url-open-service';
 
 const container = new Container();
 container.bind(CheTaskProvider).toSelf().inSingletonScope();
